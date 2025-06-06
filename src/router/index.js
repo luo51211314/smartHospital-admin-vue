@@ -132,6 +132,36 @@ export const constantRoutes = [
         },
       ]
     },
+    /*
+    科室管理
+    */
+    {
+      name: 'Dep',
+      path: '/dep',
+      component: Layout,
+      meta:{
+        title: '科室管理',
+        icon: 'el-icon-lock'
+      },
+      children: [
+        {
+          name: 'Dep',
+          path: 'dep/list',
+          component: () =>import('@/views/dep/dep/list'),
+          meta: {
+            title:"科室管理"
+          }
+        },   
+        {
+          name: 'Depbelong',
+          path: 'depbelong/list',
+          component: () =>import('@/views/dep/depbelong/list'),
+          meta: {
+            title:"科室医生管理"
+          }
+        },  
+      ]
+    },
 
     /*
     挂号管理
@@ -153,9 +183,18 @@ export const constantRoutes = [
             title:"排班管理"
           }
         },
+        {
+          name: 'Register',
+          path: 'Register/list',
+          component: () =>import('@/views/reg/register/list'),
+          meta: {
+            title:"挂号管理"
+          }
+        },        
       ]
     },
-  
+
+  /*
     {
       name: 'Product',
       path: '/product',
@@ -247,7 +286,9 @@ export const constantRoutes = [
         }
       ]
     },
+    */
   
+    /*
     {
       path: '/activity',
       component: Layout,
@@ -392,7 +433,7 @@ export const constantRoutes = [
           meta: { title: '发货列表' }
         },
       ]
-    },
+    },*/
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
